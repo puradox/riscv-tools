@@ -7,13 +7,9 @@ builds:
       - windows
       - darwin
       - linux
-    goarch:
-      - amd64
   - main: ./cmd/riscv-tb/main.go
     binary: riscv-tb
     goos:
       - windows
       - darwin
       - linux
-    goarch:
-      - amd64

@@ -1,0 +1,19 @@
+# .goreleaser.yml
+# Build customization
+builds:
+  - main: ./cmd/riscv-as/main.go
+    binary: riscv-as
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+  - main: ./cmd/riscv-tb/main.go
+    binary: riscv-tb
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64

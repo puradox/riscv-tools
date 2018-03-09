@@ -1,0 +1,49 @@
+`timescale 1ns / 1ps
+
+module tb_top;
+
+  //clock and reset signal declaration
+  logic tb_clk, reset;
+  logic [31:0] tb_WB_Data;
+
+  // 100 MHz clock
+  always #10 tb_clk = ~tb_clk;
+
+  //reset Generation
+  initial begin
+    tb_clk = 0;
+    reset = 1;
+    #25 reset =0;
+  end
+
+
+  riscv riscV(
+    .clk(tb_clk),
+    .reset(reset),
+    .WB_Data(tb_WB_Data)
+  );
+
+  task skip();
+    @(negedge tb_clk);
+    $display("SKIP [Cycle %2d - %3d ns] Got %x", ($time-1) / 20, $time, tb_WB_Data);
+  endtask
+
+  task test(int signed expected);
+    @(negedge tb_clk);
+    assert (tb_WB_Data==expected)
+      $display("GOOD [Cycle %2d - %3d ns] Got %x", ($time-1) / 20, $time, tb_WB_Data);
+    else
+      $error("[Cycle %2d - %3d ns] Expected %x, but got %x", ($time-1) / 20, $time, expected, tb_WB_Data);
+  endtask
+
+  initial begin
+    $system("echo; echo");
+    @(posedge tb_clk);
+
+{{.testbench}}
+
+    $system("echo; echo; echo");
+    $finish;
+  end
+
+endmodule

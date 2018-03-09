@@ -1,0 +1,7 @@
+# binaries
+debug
+cmd/riscv-as/riscv-as
+cmd/riscv-tb/riscv-tb
+
+# editors
+.vscode

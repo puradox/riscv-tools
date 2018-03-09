@@ -1,3 +1,0 @@
-78a33d33a8f36bf119f10ef6994d52e55bcb993f432a64cd2a3178087bdea0b7  riscv-tools_0.1.0_linux_amd64.tar.gz
-b6ffccd10f5e815e0eadac82e650a7ee42454bb3bb975af8f992f52eadbc50c2  riscv-tools_0.1.0_windows_amd64.tar.gz
-2aa65630eb4c5b67e10422c6bfe02bb46a7c6abb06e545986d3b01d4a959c854  riscv-tools_0.1.0_darwin_amd64.tar.gz

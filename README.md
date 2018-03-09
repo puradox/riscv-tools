@@ -26,16 +26,14 @@
 
 ## Install
 
-Make sure you have a working Go environment.  Go version 1.10 is recommended.  [See
-the install instructions for Go](http://golang.org/doc/install.html).
+It is strongly recommended that you use a released version. Release binaries are available on the [releases](https://github.com/puradox/riscv-tools/releases) page.
 
-To install all RISC-V tools, simply run:
+If you're interested in hacking on `riscv-tools`, you can install via `go get`:
 ```bash
 go get -u github.com/puradox/riscv-tools/...
 ```
 
-Make sure your `PATH` includes the `$GOPATH/bin` directory so your commands can
-be easily used:
+Make sure your `PATH` includes the `$GOPATH/bin` directory so your commands can be easily used:
 ```bash
 export PATH=$PATH:$GOPATH/bin
 ```

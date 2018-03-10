@@ -63,5 +63,8 @@ See `examples/tb.sv` for the generated testbench.
 Contributions are highly welcome and even encouraged! This tool was made to make RISC-V development easier. Filing bug reports and feature requests will help further improve the tool for all.
 
 ## Future work
+ - [ ] Add program counter
+ - [ ] Support labels
+ - [ ] Add macros for customizing testbench translation
  - [ ] Expose API for developers wishing to extend RISC-V instructions themselves
  - [ ] Simulate RISC-V for _automagicially_ generating expected values for testbenches

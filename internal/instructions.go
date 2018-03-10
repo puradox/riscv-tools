@@ -58,7 +58,7 @@ const nsPerCycle = 20
 
 var cycleCount = 1
 var lastInstructions []Instruction
-var pipelineStages = []string{"FE", "DE", "ME", "EX", "WB"}
+var pipelineStages = []string{"IF", "ID", "EX", "ME", "WB"}
 
 func writeCycleInfo(buf *bytes.Buffer) {
 	buf.WriteString("    //\n")

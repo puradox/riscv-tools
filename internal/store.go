@@ -37,12 +37,12 @@ func NewTypeS(item Item) (*Instruction, error) {
 			var imm string
 			var err error
 
-			rs1, err = strconv.Atoi(operands[0].Value[1:])
+			rs1, err = strconv.Atoi(operands[4].Value[1:])
 			if err != nil {
 				panic("unable to parse register source 1")
 			}
 
-			rs2, err = strconv.Atoi(operands[4].Value[1:])
+			rs2, err = strconv.Atoi(operands[0].Value[1:])
 			if err != nil {
 				panic("unable to parse register source 2")
 			}

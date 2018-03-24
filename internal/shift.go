@@ -29,10 +29,9 @@ func NewTypeShiftI(item Item) (*Instruction, error) {
 		ValidOperands: []itemType{
 			itemRegister,
 			itemComma,
-			itemInteger,
-			itemLeftParen,
 			itemRegister,
-			itemRightParen,
+			itemComma,
+			itemInteger,
 		},
 		Binary: func(operands []Item) string {
 			var rd, rs1, shamtBase10 int
@@ -44,14 +43,14 @@ func NewTypeShiftI(item Item) (*Instruction, error) {
 				panic("unable to parse register destination")
 			}
 
-			rs1, err = strconv.Atoi(operands[4].Value[1:])
+			rs1, err = strconv.Atoi(operands[2].Value[1:])
 			if err != nil {
 				panic("unable to parse register source 1")
 			}
 
-			shamtBase10, err = strconv.Atoi(operands[2].Value[1:])
+			shamtBase10, err = strconv.Atoi(operands[4].Value)
 			if err != nil {
-				panic("unable to parse register source 2")
+				panic("unable to parse immediate value")
 			}
 
 			shamt = strconv.FormatInt(int64(shamtBase10), 2)

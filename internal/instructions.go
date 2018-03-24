@@ -156,7 +156,7 @@ var newTypeFns = map[itemType]newTypeFn{
 	itemSLTIU: NewTypeI,
 	itemSLTU:  NewTypeR,
 	itemSRA:   NewTypeR,
-	itemSRAI:  NewTypeI,
+	itemSRAI:  NewTypeShiftI,
 	itemSRL:   NewTypeR,
 	itemSRLI:  NewTypeI,
 	itemSUB:   NewTypeR,

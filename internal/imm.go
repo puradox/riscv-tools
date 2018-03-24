@@ -61,8 +61,12 @@ func NewTypeI(item Item) (*Instruction, error) {
 			if err != nil {
 				panic("unable to parse immediate value")
 			}
-			imm = strconv.FormatInt(int64(immValue), 2)
+
+			imm = strconv.FormatUint(uint64(immValue), 2)
 			imm = fmt.Sprintf("%012s", imm)
+			if immValue < 0 {
+				imm = imm[64-12 : 64]
+			}
 
 			return fmt.Sprintf("%012s%05b%s%05b%s", imm, rs1, func3, rd, opcodeTypeI)
 		},

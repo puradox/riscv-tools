@@ -20,7 +20,6 @@ func NewTypeR(item Item) (*Instruction, error) {
 		func7 = "0100000"
 	case itemSLL:
 		func3 = "001"
-		func7 = "0100000"
 	case itemSLT:
 		func3 = "010"
 	case itemSLTU:
